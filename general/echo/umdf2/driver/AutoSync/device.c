@@ -47,6 +47,8 @@ NTSTATUS EchoDeviceCreate(PWDFDEVICE_INIT DeviceInit)
 
     // Register pnp/power callbacks so that we can start and stop the timer as the device
     // gets started and stopped
+    // refer line #46 & line #47 in device.h for 
+    // 'EchoEvtDeviceSelfManagedIoStart' and 'EchoEvtDeviceSelfManagedIoSuspend'
     pnpPowerCallbacks.EvtDeviceSelfManagedIoInit    = EchoEvtDeviceSelfManagedIoStart;
     pnpPowerCallbacks.EvtDeviceSelfManagedIoSuspend = EchoEvtDeviceSelfManagedIoSuspend;
 
